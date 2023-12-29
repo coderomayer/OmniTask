@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white p-8 md:p-24 mt-8">
+    <footer className="bg-gray-800 text-white p-8 md:p-24">
       <div className="container mx-auto text-center grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Footer Section 1 */}
         <div>

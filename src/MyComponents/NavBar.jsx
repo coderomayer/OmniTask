@@ -1,71 +1,129 @@
-// NavBar.js
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-const NavBar = ({ isLoggedIn, onLogout, userAvatar }) => {
+
+import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { userAuth } from "@/Provider/AuthProvider";
+import { Button, buttonVariants } from "@/components/ui/button";
+
+
+const NavBar = () => {
+
+  const { user, logOut } = useContext(userAuth)
+
+  const handleLogout = () => {
+    logOut()
+  }
+
   return (
-    <nav className="bg-blue-500 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="text-white text-2xl font-bold">
-          YourLogo
-        </Link>
+    <nav className="bg-blue-600 p-4 flex gap-8 items-center justify-between">
 
-        {/* Toggle for small screens */}
-        <div className="lg:hidden">
-          <button
-            type="button"
-            className="text-white focus:outline-none"
-            // Add functionality for mobile menu toggle if needed
-          >
-            {/* Hamburger Icon or any other mobile menu icon */}
-            ☰
-          </button>
-        </div>
+      <div>
+        <Drawer>
 
-        {/* Page Links */}
-        <div className="hidden lg:flex space-x-4">
-          <Link to="/" className="text-white hover:underline">
-            Home
-          </Link>
-          <Link to="/about" className="text-white hover:underline">
-            About
-          </Link>
-          <Link to="/explore" className="text-white hover:underline">
-            Explore
-          </Link>
-        </div>
+          <DrawerTrigger className="text-white">
+            <AiOutlineMenu></AiOutlineMenu>
+          </DrawerTrigger>
 
-        {/* User Authentication */}
-        <div className="flex items-center space-x-4">
-          {isLoggedIn ? (
-            // User is logged in
-            <>
-              {/* Clickable User Avatar */}
-              <button className="focus:outline-none">
-                <img
-                  src={userAvatar}
-                  alt="User Avatar"
-                  className="w-8 h-8 rounded-full"
-                />
-              </button>
-              {/* Log Out Button */}
-              <button
-                onClick={onLogout}
-                className="text-white hover:underline focus:outline-none"
-              >
-                Log Out
-              </button>
-            </>
-          ) : (
-            // User is not logged in
-            <Link to="/signup" className="text-white hover:underline">
-              Sign Up
-            </Link>
-          )}
-        </div>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle>
+                <div className="grid grid-cols-1 gap-4">
+
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive ? "underline" : ""}>
+                    Home
+                  </NavLink>
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      isActive ? "underline" : ""}>
+                    About
+                  </NavLink>
+                  <NavLink
+                    to="/explore"
+                    className={({ isActive }) =>
+                      isActive ? "underline" : ""}>
+                    Explore
+                  </NavLink>
+                  <NavLink
+                    to="/task"
+                    className={({ isActive }) =>
+                      isActive ? "underline" : ""}>
+                    Task
+                  </NavLink>
+
+                </div>
+              </DrawerTitle>
+              
+            </DrawerHeader>
+            <DrawerFooter>
+
+              <DrawerClose>
+                <h2 className="text-black border p-2 rounded inline-block absolute right-8 top-8"><AiOutlineClose /></h2>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+
       </div>
+
+      <div>
+        <a href="/"><img className="w-12" src="/white-logo.png" alt="" /></a>
+      </div>
+
+      <div>
+        {
+          user ?
+
+            <>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Avatar>
+                    <AvatarImage src={user?.photoURL} />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Billing</DropdownMenuItem>
+                  <DropdownMenuItem>Team</DropdownMenuItem>
+                  <DropdownMenuItem><h2 onClick={handleLogout}>Logout</h2></DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+            </> : <div className="text-white font-Quicksand text-xs">
+            <Link to='/registration'  className={buttonVariants({ variant: "outline" })}>Sign Up</Link>
+            </div>
+        }
+      </div>
+
+
     </nav>
   );
 };
