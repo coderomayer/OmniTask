@@ -186,7 +186,7 @@ const Registration = () => {
 
                         <p>Already have a account? Please <Link className="font-semibold text-red-600 underline" to="/login">Login</Link></p>
 
-                        <div>
+                        <div className="my-5">
                             {
                                 error && <p className="px-4 py-2 rounded-lg bg-red-700 text-white">{error}</p>
                             }
