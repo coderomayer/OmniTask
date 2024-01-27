@@ -1,4 +1,4 @@
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu, AiOutlineUser } from "react-icons/ai";
 import {
   Drawer,
   DrawerClose,
@@ -105,7 +105,7 @@ const NavBar = () => {
                   <DropdownMenuTrigger>
                     <Avatar>
                       <AvatarImage src={user?.photoURL} />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarFallback> <AiOutlineUser /></AvatarFallback>
                     </Avatar>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>

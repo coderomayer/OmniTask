@@ -4,9 +4,9 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className=" min-h-screen py-12 max-w-lg mx-auto">
-      <div className="container mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-center">About OmniTask</h1>
+    <div className=" min-h-screen py-12 max-w-lg mx-auto ">
+      <div className="container mx-auto py-24"> 
+        <h1 className="text-6xl font-bold mb-8 text-center">About <br /> <span className='font-Quicksand'>OmniTask</span></h1>
 
         <div className="grid grid-cols-1  gap-12 ">
           {/* Left Column */}
@@ -43,7 +43,7 @@ const About = () => {
         </div>
 
         {/* Call-to-Action */}
-        <div className="text-center mt-8">
+        <div className=" mt-8">
           <p className="text-lg mb-4">
             Ready to experience OmniTask? Sign up today and transform the way
             you manage tasks.
