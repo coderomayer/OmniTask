@@ -53,7 +53,7 @@ const router = createBrowserRouter([
 
   {
     path: '/task',
-    element: <PrivetRout><TaskLayout></TaskLayout></PrivetRout>,
+    element: <TaskLayout></TaskLayout>,
 
     children: [
 
