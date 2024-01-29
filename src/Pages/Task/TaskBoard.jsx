@@ -66,8 +66,10 @@ const TaskBoard = () => {
                                         <AiOutlineMore />
                                         </DropdownMenuTrigger>
                                         <DropdownMenuContent className="bg-white p-4 rounded-md">
-                                            <DropdownMenuItem onClick={() => handleDelete (task?._id)}>Dellete</DropdownMenuItem>
-                                            <DropdownMenuItem>Update</DropdownMenuItem>
+                                            <DropdownMenuItem onClick={() => handleDelete (task?._id)} className="cursor-pointer hover:text-red-700">Dellete</DropdownMenuItem>
+
+                                            <DropdownMenuItem className="cursor-pointer hover:text-lime-600">Update</DropdownMenuItem>
+
                                         </DropdownMenuContent>
                                     </DropdownMenu>
                                 </div>
