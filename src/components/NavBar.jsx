@@ -38,7 +38,7 @@ const NavBar = () => {
   return (
     <nav className="bg-blue-600 p-4 ">
 
-      <div className="max-w-screen-xl mx-auto flex gap-8 items-center justify-between ">
+      <div className="max-w-screen-xl mx-auto flex gap-8 items-center justify-between t ">
         <div>
           <Drawer>
 
@@ -49,7 +49,7 @@ const NavBar = () => {
             <DrawerContent>
               <DrawerHeader>
                 <DrawerTitle>
-                  <div className="grid grid-cols-1 gap-4">
+                  <div className="grid grid-cols-1 gap-4 text-sm font-Quicksand">
 
                     <NavLink
                       to="/"
@@ -82,9 +82,10 @@ const NavBar = () => {
               </DrawerHeader>
               <DrawerFooter>
 
-                <DrawerClose>
+                {/* <DrawerClose>
                   <h2 className="text-black border p-2 rounded inline-block absolute right-8 top-8"><AiOutlineClose /></h2>
-                </DrawerClose>
+                </DrawerClose> */}
+
               </DrawerFooter>
             </DrawerContent>
           </Drawer>

@@ -4,7 +4,7 @@ import React from 'react';
 
 const Explore = () => {
   return (
-    <div className="bg-gray-100 min-h-screen py-12 md:p-24 max-w-4xl mx-auto font-Quicksand">
+    <div className=" min-h-screen py-12 md:p-24 max-w-4xl mx-auto font-Quicksand">
       <div className="container mx-auto">
         <h1 className="text-2xl md:text-5xl font-extrabold mb-8 ">Journey into Efficiency: Unveiling the Wonders of OmniTask</h1>
 
