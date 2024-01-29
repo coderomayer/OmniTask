@@ -6,8 +6,8 @@ const About = () => {
 
   return (
 
-    <div className="min-h-screen p-8 mdLp-24 max-w-4xl mx-auto">
-      <div className="container mx-auto py-24">
+    <div className="min-h-screen p-8 md:p-24 max-w-4xl mx-auto">
+      <div className="container mx-auto ">
         <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center uppercase font-Josefin Sans text-blue-600">
           Know About <br /> <span className='font-Quicksand text-3xl md:text-5xl text-black'>OmniTask Story</span>
         </h1>
