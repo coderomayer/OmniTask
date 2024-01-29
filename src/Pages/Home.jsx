@@ -1,6 +1,7 @@
 import {motion} from "framer-motion"
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import 'animate.css';
 
 const Home = () => {
     return (
@@ -10,21 +11,19 @@ const Home = () => {
                     <div className="text-white max-w-3xl mx-auto font-Quicksand pb-6">
                         {/* Replace the text with AnimatedTextCharacter */}
 
-                        <motion.h1
-                        initial={{x: -1000}}
-                        animate={{x: 0}}
-                        transition={{duration: 2}} 
-                        className="text-2xl sm:text-4xl md:text-6xl ">
+                        <h1 className="animate__animated animate__fadeInDown text-2xl sm:text-4xl md:text-6xl ">
                             Transform Your Learning Journey with <span className="font-bold">OmniTask</span>
-                        </motion.h1>
+                        </h1>
 
-                        <p className="text-xs md:text-lg my-8 md:max-w-lg mx-auto">
+                        
+
+                        <p className=" animate__animated animate__fadeInUp text-xs md:text-lg my-8 md:max-w-lg mx-auto">
                             Effortlessly manage tasks, stay organized, and achieve academic
                             success. OmniTask is your all-in-one task management platform
                             designed for students, educators, and professionals.
                         </p>
 
-                        <div className="flex gap-4 justify-center">
+                        <div className="animate__animated animate__fadeInUp flex gap-4 justify-center">
                             <Link to="/about" className={buttonVariants({ variant: "outline" })}>
                                 Learn More
                             </Link>
