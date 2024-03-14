@@ -22,7 +22,7 @@ const TaskBoard = () => {
     })
 
     if (isLoading) {
-        return ('Loading')
+        return ('Loading...')
     }
 
     const handleDelete =  async (taskId) => {
@@ -68,7 +68,7 @@ const TaskBoard = () => {
                                         <DropdownMenuContent className="bg-white p-4 rounded-md">
                                             <DropdownMenuItem onClick={() => handleDelete (task?._id)} className="cursor-pointer outline-none hover:text-red-700">Dellete</DropdownMenuItem>
 
-                                            <DropdownMenuItem className="cursor-pointer outline-none hover:text-lime-600">Update</DropdownMenuItem>
+                                            {/* <DropdownMenuItem className="cursor-pointer outline-none hover:text-lime-600">Update</DropdownMenuItem> */}
 
                                         </DropdownMenuContent>
                                     </DropdownMenu>
