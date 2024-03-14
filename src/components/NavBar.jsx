@@ -111,10 +111,12 @@ const NavBar = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuItem>{user?.name}</DropdownMenuItem>
+                    <DropdownMenuItem>{user?.email}</DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>Profile</DropdownMenuItem>
-                    <DropdownMenuItem>Billing</DropdownMenuItem>
-                    <DropdownMenuItem>Team</DropdownMenuItem>
+                    <DropdownMenuItem> <Link to="/profile">Profile</Link> </DropdownMenuItem>
+
+                    
                     <DropdownMenuItem><h2 onClick={handleLogout}>Logout</h2></DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>

@@ -13,6 +13,7 @@ import Task from './Pages/Task/Task';
 import TaskLayout from './Layout/TaskLayout';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import PrivetRout from './Provider/PrivetRout';
+import Profile from './Pages/Profile';
 
 const queryClient = new QueryClient()
 
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login></Login>
       },
+
+      {
+        path: '/profile',
+        element: <Profile></Profile>
+      }
+
     ]
   },
 
